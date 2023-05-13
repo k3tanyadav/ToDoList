@@ -1,3 +1,7 @@
 module.exports.profile = function(req,res){
-    res.end('<h1>this is a profile page!!</h1>')
+    return res.render('home',{
+        title:"profile page"
+    })
 }
+
+//using the home template for user profile as well
