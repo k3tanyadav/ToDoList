@@ -8,6 +8,9 @@ app.use(express.static('./assets'));
 
 //use express layouts
 app.use(expressLayouts);
+// extract stylesheets and scripts of sub pages into the layout
+app.set('layout extractStyles', true);
+app.set('layout extractScripts', true);
 
 //using express router
 app.use('/', require('./routes'));
