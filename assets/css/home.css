@@ -1,3 +1,6 @@
 body{
     background: beige;
 }
+.taskdiv{
+    border: 3px solid lightcoral;
+}

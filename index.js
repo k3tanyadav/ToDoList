@@ -1,8 +1,15 @@
 const express = require('express');
 const port = 8000;
-const app = express();
+const bodyParser = require('body-parser');
+
 const db = require('./config/mongoose');
+const Tasks = require('./models/tasks');
+
+const app = express();
 const expressLayouts = require('express-ejs-layouts');
+
+//use body-parser to read data
+app.use(bodyParser.urlencoded({extended: false}));
 
 // use static files
 app.use(express.static('./assets'));

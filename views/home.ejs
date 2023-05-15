@@ -1,2 +1,24 @@
 <link rel="stylesheet" href="/css/home.css">
-<p> welcome <%= title %> </p>
+
+<form action="/add-task" method="post">
+    <input type="text" placeholder="enter task..." name="task">
+    <select name="category">
+        <option value="Home">Home</option>
+        <option value="Professional">Professional</option>
+        <option value="Personal">Personal</option>
+        <option value="Occasion">Occasion</option>
+    </select>
+    <input type="date" name="due_date">
+    <button type="submit">ADD TASK</button>
+</form>
+
+<div>
+    <% for (let t of taskList) { %>
+        <div class="taskdiv">
+            <p><%= t.task %></p>
+            <p><%= t.category %></p>
+            <span><%= t.due_date %></span>
+            <input type="checkbox">
+        </div>
+    <% } %>    
+</div>
