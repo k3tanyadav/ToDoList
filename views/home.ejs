@@ -1,15 +1,22 @@
 <link rel="stylesheet" href="/css/home.css">
 
 <form action="/add-task" method="post">
-    <input type="text" placeholder="enter task..." name="task">
-    <select name="category">
+    <label for="task">Description</label>
+    <input id="task" type="text" placeholder="enter task..." name="task">
+
+    <label for="category">Category</label>
+    <select name="category" id="category">
         <option value="Home">Home</option>
         <option value="Professional">Professional</option>
         <option value="Personal">Personal</option>
         <option value="Occasion">Occasion</option>
     </select>
-    <input type="date" name="due_date">
-    <button type="submit">ADD TASK</button>
+
+    <label for="due_date">Due Date</label>
+    <input id="due_date" type="date" name="due_date">
+    <br>
+
+    <button type="submit">Add Task</button>
 </form>
 
 <div>
@@ -19,6 +26,7 @@
             <p><%= t.category %></p>
             <span><%= t.due_date %></span>
             <input type="checkbox">
+            <a href="/delete-task/?id=<%= t._id %>">X</a>
         </div>
     <% } %>    
 </div>
