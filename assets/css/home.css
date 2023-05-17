@@ -1,16 +1,58 @@
 body{
-    background: beige;
-}
-.taskdiv{
-    border: 3px solid lightcoral;
-    background-color: honeydew;
-    margin: 5px;
-    border-radius: 10px;
+    background: lavender;
+    font-family: monospace;
 }
 form{
     text-align: center;
-    width: 50%;
+    width: 80%;
 }
 button{
     margin: 10px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+}
+a{
+    text-decoration: none;
+    padding: 5px;
+    color: black;
+}
+i{
+    margin-right: 5px;
+}
+
+#task-container{
+    width:50%;
+}
+.taskdiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 2px 2px greenyellow;
+    background-color: lightgreen;
+    margin: 10px;
+    border-radius: 10px;
+}
+.task-info div{
+    display: inline-block;
+}
+.task-info input{
+    vertical-align: top;
+    margin-top: 10px;
+}
+.task-info input:checked + div h3{
+    text-decoration: line-through;
+}
+h3{
+    margin-top: 5px;
+    color: darkslategray;
+}
+.task-tag{
+    display: inline-block;
+    background: hotpink;
+    color: white;
+    width: 70px;
+    text-align: center;
+    padding: 2px;
+    border-radius: 5px;
 }

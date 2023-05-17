@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="/css/home.css">
+<script src="https://kit.fontawesome.com/8a540595d6.js" crossorigin="anonymous"></script>
 
 <form action="/add-task" method="post">
     <label for="task">Description</label>
@@ -16,17 +17,23 @@
     <input id="due_date" type="date" name="due_date">
     <br>
 
-    <button type="submit">Add Task</button>
+    <button type="submit"><i class="fa-solid fa-plus"></i> Add Task</button>
 </form>
 
-<div>
+<div id="task-container">
     <% for (let t of taskList) { %>
         <div class="taskdiv">
-            <p><%= t.task %></p>
-            <p><%= t.category %></p>
-            <span><%= t.due_date %></span>
-            <input type="checkbox">
-            <a href="/delete-task/?id=<%= t._id %>">X</a>
+            <div class="task-info">
+                <input type="checkbox">
+                <div>
+                    <h3><%= t.task %></h3>
+                    <span><i class="fa-solid fa-calendar-days"></i><%= t.due_date.toDateString() %></span>
+                </div>
+            </div>
+            <div>
+                <span class="task-tag"><%= t.category %></span>
+                <a href="/delete-task/?id=<%= t._id %>"><i class="fa-solid fa-trash-can"></i></a>
+            </div>
         </div>
     <% } %>    
 </div>
