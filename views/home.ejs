@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="/css/home.css">
 <script src="https://kit.fontawesome.com/8a540595d6.js" crossorigin="anonymous"></script>
+<script src="/js/home.js"></script>
 
 <form action="/add-task" method="post">
     <label for="task">Description</label>
@@ -24,7 +25,7 @@
     <% for (let t of taskList) { %>
         <div class="taskdiv">
             <div class="task-info">
-                <input type="checkbox">
+                <input type="checkbox" id="<%= t._id%>" <%= t.completed ? 'checked' : '' %>>
                 <div>
                     <h3><%= t.task %></h3>
                     <span><i class="fa-solid fa-calendar-days"></i><%= t.due_date.toDateString() %></span>
