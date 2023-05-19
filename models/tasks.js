@@ -15,6 +15,9 @@ const taskSchema = new mongoose.Schema({
     },
     completed : {
         type: Boolean,
+    },
+    tagColor : {
+        type: String,
     }
 })
 

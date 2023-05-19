@@ -14,8 +14,17 @@ module.exports.home = function(req,res){
 //add task to the database
 module.exports.addTask = function(req,res){
     console.log('********add********',req.body);
+
+    let tagColor;
+    let category = req.body.category;
+
+    if(category === "Personal") tagColor = "deeppink";
+    else if(category === "Work") tagColor = "cornflowerblue";
+    else if(category === "School") tagColor = "tomato";
+    else tagColor = "slategrey";  
+
     Tasks.create({
-        ...req.body, completed : false
+        ...req.body, completed : false, tagColor: tagColor
     });
     return res.redirect('back');
 }

@@ -4,18 +4,18 @@
 
 <form action="/add-task" method="post">
     <label for="task">Description</label>
-    <input id="task" type="text" placeholder="enter task..." name="task">
+    <input id="task" type="text" placeholder="enter task..." name="task" required>
 
     <label for="category">Category</label>
-    <select name="category" id="category">
-        <option value="Home">Home</option>
-        <option value="Professional">Professional</option>
+    <select name="category" id="category" required>
         <option value="Personal">Personal</option>
-        <option value="Occasion">Occasion</option>
+        <option value="Work">Work</option>
+        <option value="School">School</option>
+        <option value="Other">Other</option>
     </select>
 
     <label for="due_date">Due Date</label>
-    <input id="due_date" type="date" name="due_date">
+    <input id="due_date" type="date" name="due_date" required>
     <br>
 
     <button type="submit"><i class="fa-solid fa-plus"></i> Add Task</button>
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div>
-                <span class="task-tag"><%= t.category %></span>
+                <span class="task-tag" style="background: <%= t.tagColor %>;"><%= t.category %></span>
                 <a href="/delete-task/?id=<%= t._id %>"><i class="fa-solid fa-trash-can"></i></a>
             </div>
         </div>
