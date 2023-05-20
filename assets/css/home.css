@@ -1,3 +1,4 @@
+/* -------------------------------general rules----------------------- */
 body{
     background: lavender;
     font-family: monospace;
@@ -21,8 +22,10 @@ i{
     margin-right: 5px;
 }
 
+/* -------------------------------task container and task divs ---------------------- */
 #task-container{
     width:50%;
+    color: black;
 }
 .taskdiv{
     display: flex;
@@ -54,4 +57,14 @@ h3{
     text-align: center;
     padding: 2px;
     border-radius: 5px;
+}
+
+/* ---------------------------theme toggle button---------------------- */
+#toggle{
+    padding: 0;
+    margin: 0;
+}
+#toggle i{
+    margin: 0;
+    font-size: 1.2em;
 }
