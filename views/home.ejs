@@ -1,7 +1,9 @@
+<!----------------- css and scripts used in the todo list home page --------->
 <link rel="stylesheet" href="/css/home.css">
 <script src="https://kit.fontawesome.com/8a540595d6.js" crossorigin="anonymous"></script>
 <script src="/js/home.js"></script>
 
+<!--------------------- form to take TODO task input from user --------------->
 <form action="/add-task" method="post">
     <label for="task">Description</label>
     <input id="task" type="text" placeholder="enter task..." name="task" required>
@@ -21,6 +23,7 @@
     <button type="submit"><i class="fa-solid fa-plus"></i> Add Task</button>
 </form>
 
+<!----------iterating over the taskList data sent by home_controller to render page ------->
 <div id="task-container">
     <% for (let t of taskList) { %>
         <div class="taskdiv">

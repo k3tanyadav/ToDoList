@@ -41,7 +41,7 @@ i{
     margin-top: 10px;
 }
 .task-info input:checked + div h3{
-    text-decoration: line-through;
+    text-decoration: line-through;  /*strike through the text when a task checkbox is checked*/
 }
 h3{
     margin-top: 5px;

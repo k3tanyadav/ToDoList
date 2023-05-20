@@ -1,10 +1,10 @@
 const Tasks = require('../models/tasks');
 
-//render home page by fetching data from db
+//render TODO list home page by fetching data from db
 module.exports.home = function(req,res){
     Tasks.find({}).then((data)=>{
         return res.render('home', {
-            title: "HOME",
+            title: "TODO list",
             taskList: data
         })
     })
